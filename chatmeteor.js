@@ -1,4 +1,4 @@
-Messages= new Mongo.Collection('messages');
+Messages = new Mongo.Collection('messages');
 
 if (Meteor.isClient) {
   Template.hello.helpers({
@@ -15,7 +15,7 @@ Template.messages.events({
 
     Messages.insert({
       message: value,
-      timestamp: Naw Date(),
+      timestamp: new Date(),
       user: Meteor.userId()
     });
   }

@@ -20,8 +20,24 @@ Template.messages.events({
     });
   }
 }
-})
+});
+
+Template.message.helpers({
+user: function() {
+  return Meteor.users.findOne({_id: this.user});
+},
+
+time: function() {
+  return this.timestamp;
 }
+});
+
+Accounts.ui.config({
+  passwordSignupFields: "USERNAME_AND_OPTIONAL_EMAIL"
+});
+
+}
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {

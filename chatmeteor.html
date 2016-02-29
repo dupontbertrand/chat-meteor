@@ -7,26 +7,27 @@
 </body>
 
 <template name="messages">
-{{> loginButtons}}
+  {{> loginButtons align="right"}}
 
-<ul>
-  {{#each messages}}
-  {{> message}}
-  {{/each}}
-</ul>
+  <ul>
+    {{#each messages}}
+      {{> message}}
+    {{/each}}
+  </ul>
 
-<form>
-<textarea rows="1" cols="100"></textarea>
-</form>
+  <form>
+    <textarea rows="1" cols="100"></textarea>
+  </form>
 </template>
 
 <template name="message">
-<li>
-  <div class="message-header">
-    {{user.username}} <span class="time">{{time}}</span>
-  </div>
-  <div class="message-content">
-    {{message}}
-  </div>
-</li>
+  <li>
+    <img src="{{user.profile}}"/>
+    <div class="message-header">
+      {{user.username}} <span class="time">{{time}}</span>
+    </div>
+    <div class="message-content">
+      {{message}}
+    </div>
+  </li>
 </template>

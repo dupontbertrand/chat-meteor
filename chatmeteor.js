@@ -28,7 +28,7 @@ user: function() {
 },
 
 time: function() {
-  return this.timestamp;
+  return moment(this.timestamp).format('h:mm a');
 }
 });
 
